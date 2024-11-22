@@ -1,0 +1,91 @@
+MainPage.Xaml,cs:
+
+using System;
+using Xamarin.Forms;
+
+namespace tareaxamarindbp00
+{
+    public partial class MainPage : ContentPage
+    {
+        public MainPage()
+        {
+            InitializeComponent(); // conexion
+        }
+
+    }
+}
+
+
+
+MainPage.Xaml:
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="tareaxamarindbp00.MainPage"
+             BackgroundColor="White">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!-- Estilo para los títulos -->
+            <Style x:Key="TitleStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="20" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="TextColor" Value="#414141" />
+            </Style>
+            <!-- Estilo para las descripciones -->
+            <Style x:Key="DescriptionStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="16" />
+                <Setter Property="TextColor" Value="#888" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <Grid Padding="20" RowDefinitions="Auto, *" ColumnDefinitions="3*, 7*" BackgroundColor="White">
+            <!-- Header -->
+            <Grid BackgroundColor="#414141" Grid.ColumnSpan="2" Padding="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                
+                <StackLayout Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center">
+                  
+                    <Label Text="SEBASTIAN HANCCO" Style="{StaticResource DescriptionStyle}" />
+                </StackLayout>
+            </Grid>
+
+            <!-- Sidebar -->
+            <StackLayout Grid.Row="1" Grid.Column="0" Padding="10">
+                <Label Text="Contacto" Style="{StaticResource TitleStyle}" />
+                <Label Text="Teléfono: 936 418 180" Style="{StaticResource DescriptionStyle}" />
+                <Label Text="Email: sebastian.hancco@ucsp.edu.pe" Style="{StaticResource DescriptionStyle}" />
+           
+               
+            </StackLayout>
+
+            <!-- Main Content -->
+            <StackLayout Grid.Row="1" Grid.Column="1" Padding="10">
+                <Label Text="PERFIL" Style="{StaticResource TitleStyle}" />
+                <Label Text="Estudiante de 3er semestre con proyectos personales como sitios web ya realizados." Style="{StaticResource DescriptionStyle}" />
+
+                <Label Text="EXPERIENCIA LABORAL" Style="{StaticResource TitleStyle}" />
+                <StackLayout Padding="10">
+                    <Label Text="Trabajador Social" Style="{StaticResource TitleStyle}" />
+                    <Label Text="Perú, 2023 - Actualidad" Style="{StaticResource DescriptionStyle}" />
+                    <StackLayout Padding="10">
+                        <Label Text="- Sitio web para una pagina de ropa" Style="{StaticResource DescriptionStyle}" />
+                        <Label Text="- Videojuego de bomberman en C++" Style="{StaticResource DescriptionStyle}" />
+                    </StackLayout>
+                </StackLayout>
+
+                <Label Text="FORMACIÓN" Style="{StaticResource TitleStyle}" />
+                <Label Text="Licenciatura Profesional - Universidad Católica San Pablo, Perú, 2024" Style="{StaticResource DescriptionStyle}" />
+            </StackLayout>
+        </Grid>
+    </ScrollView>
+
+</ContentPage>
+
+
